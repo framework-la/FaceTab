@@ -1,23 +1,26 @@
-var url = 'https://api.themoviedb.org/3/movie/157336?api_key=78e5abe0311622cd1bfea829dac9843e&append_to_response=videos';
-
-
+//document is ready
+$(function(){
+//define variable for movies
+var $movies = $('#movies');
+var url = 'https://api.themoviedb.org/3/movie/popular?api_key=a876e09a990890085ce0f2ea47a30a1d&language=en-US&page=1';
   $.ajax({
     type: 'GET',
     url: url,
     dataType: 'json',
-    success: function (data) {
-    console.log(data);
-
-    $( document ).ready( function () {
-     $( "body" ).append( $( "<h1>" + data + "</h1>" ) );
-      
-    
-      console.log(data);
-
-    } );
-    
+    success: function (movies) {
+      console.log (movies);
+      $.each(movies.results, function(i,movie) {
+        $movies.append('<li>' + movie.title + '</li>');
+        console.log(movie.poster_path);
+        $movies.append('<p>' + "<img src = http://image.tmdb.org/t/p/w92/" + movie.poster_path  + '>' + '</p>');
 
 
+
+
+      });
     }
-  })
+  });
+});
+
+
 

@@ -7,7 +7,8 @@
 <html>
   <head>
     <title>Getting Started Extension's Popup</title>
-    <style>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <!--<style>
       body {
         font-family: "Segoe UI", "Lucida Grande", Tahoma, sans-serif;
         font-size: 100%;
@@ -19,8 +20,7 @@
         overflow: hidden;
         max-width: 400px;
       }
-    </style>
-
+    </style>-->
     <!--
       - JavaScript and HTML must be in separate files: see our Content Security
       - Policy documentation[1] for details and explanation.
@@ -29,21 +29,11 @@
      -->
     <script src="jquery-3.2.1.min.js"></script> 
     <script src="popup.js"></script>
-
   </head>
   <body>
-    
-    <div id="movies"></div>
-
-    <p> Some text here...</p>
-    <p> Some text here...</p>
-    <h1>more text</h1>
- 
-
-    </div>
-
-
-
+    <h1> Top Movies</h1>
+    <ol id="movies"></ol>
+   
     <div id="status"></div>
     <img id="image-result" hidden>
   </body>

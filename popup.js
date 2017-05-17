@@ -12,8 +12,9 @@ var url = 'https://api.themoviedb.org/3/movie/popular?api_key=a876e09a990890085c
       $.each(movies.results, function(i,movie) {
         $movies.append('<li>' + movie.title + '</li>');
         console.log(movie.poster_path);
+        $movies.append('<p>' + movie.overview  + '</p>');
         $movies.append('<p>' + "<img src = http://image.tmdb.org/t/p/w92/" + movie.poster_path  + '>' + '</p>');
-
+       
 
 
 
